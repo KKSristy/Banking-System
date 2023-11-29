@@ -25,7 +25,7 @@ class BankDetailed {
    	try {
    	    Class.forName("com.mysql.cj.jdbc.Driver");
    	    Connection connection = DriverManager.getConnection(
-   	            "jdbc:mysql://localhost:3306/emonk", "root", "");
+   	            "jdbc:mysql://localhost:3306/sristy", "root", "");
    	    Statement statement = connection.createStatement();
    	    String i = "insert into banking values('" +accno+ "', '" +acc_type+ "', '" +name+ "', '"+balance+ "')";
    	    int x = statement.executeUpdate(i);
@@ -43,7 +43,7 @@ class BankDetailed {
    	try {
    	    Class.forName("com.mysql.cj.jdbc.Driver");
    	    Connection connection = DriverManager.getConnection(
-   	            "jdbc:mysql://localhost:3306/emonk", "root", "");
+   	            "jdbc:mysql://localhost:3306/sristy", "root", "");
    	    Statement statement = connection.createStatement();
    	    String j = "select * from banking WHERE accno = '" + accno + "' AND acc_type = '" + acc_type + "'";
    	    ResultSet rs = statement.executeQuery(j);
@@ -68,13 +68,13 @@ class BankDetailed {
 	   try {
 	   	    Class.forName("com.mysql.cj.jdbc.Driver");
 	   	    Connection connection = DriverManager.getConnection(
-	   	            "jdbc:mysql://localhost:3306/emonk", "root", "");
+	   	            "jdbc:mysql://localhost:3306/sristy", "root", "");
 	   	    Statement statement = connection.createStatement();
 	   	    String j = ("UPDATE banking set balance = '" + newbalance + "' WHERE accno = '" + accno + "' AND balance = '" + balance +"'");
 	   	 int x = statement.executeUpdate(j);
 	   	    connection.close();
 		   	 if (x > 0) {
-		   		 System.out.print("Balance update");
+		   		 System.out.print("Balance updated");
 		   	 }
 		   	 else 
 		   		 System.out.print("Balance Doesn't update");
@@ -92,16 +92,16 @@ class BankDetailed {
  try {
  	    Class.forName("com.mysql.cj.jdbc.Driver");
  	    Connection connection = DriverManager.getConnection(
- 	            "jdbc:mysql://localhost:3306/emonk", "root", "");
+ 	            "jdbc:mysql://localhost:3306/sristy", "root", "");
  	    Statement statement = connection.createStatement();
  	    String j = ("UPDATE banking set balance = '" + newbalance + "' WHERE accno = '" + accno + "' AND balance = '" + balance +"'");
 	   	 int x = statement.executeUpdate(j);
  	    connection.close();
  	 	 if (x > 0) {
- 	 		 System.out.print("Balance reduce");
+ 	 		 System.out.print("Balance reduced");
  	 	 }
  	 	 else 
- 	 		 System.out.print("Balance Doesn't reduce");
+ 	 		 System.out.print("Balance Doesn't reduced");
  	} catch (Exception e) {
  	    System.out.println(e);
  	}
